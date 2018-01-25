@@ -10,13 +10,13 @@ const styles = {
 class YellowButton extends PureComponent {
   static propTypes = {
     onChange: PropTypes.func.isRequired,
-    rated: PropTypes.bool.isRequired,
+    rated: PropTypes.bool
   }
 
   classNames() {
 
   const { rated } = this.props
-  let classes = 'rate'
+  let classes = 'YellowButton'
 
   if (rated) { classes += ' rated' }
 

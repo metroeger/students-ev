@@ -1,18 +1,24 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import Title from '../components/Title'
-import Student from './Student'
+import Student, {studentShape} from './Student'
+import { connect } from 'react-redux'
 
 
 class Batch extends PureComponent {
-  renderStudent(student, index) {
-      return <Student key={index} {...student} />
+  static propTypes = {
+   students: PropTypes.arrayOf(studentShape).isRequired,
+ }
+
+  renderStudent = (student, index) => {
+      return <Student key = {index} {...student} />
     }
+
   render() {
     return(
       <div className="students wrapper">
         <header>
-          <Title content="Students" />
+          <Title content="BATCH #13" />
         </header>
         <main>
           { this.props.students.map(this.renderStudent) }
@@ -22,5 +28,6 @@ class Batch extends PureComponent {
   }
 }
 
+const mapStateToProps = ({students}) => ({students})
 
-export default Batch
+export default connect (mapStateToProps)(Batch)
