@@ -30,9 +30,8 @@ class RedButton extends PureComponent {
     return (
       <p className={ this.classNames() }>
         <button
-        style={styles.button}
-        onClick={ this.toggleRate.bind(this) }>
-          { rated ? "RED" : 'RATE ME' }
+        style={styles.button}>
+          RED
         </button>
       </p>
     )

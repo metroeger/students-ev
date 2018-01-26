@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Routes from './routes'
 import logo from './logo.svg';
 import './App.css';
 import Batch from './batch/Batch';
@@ -6,14 +7,12 @@ import background from '/home/agi/Desktop/students/students_ev/src/images/backgr
 
 
 class App extends Component {
-    updateStudent(id, update) {
 
-    }
     render() {
         return(
           <div className="App">
             <img style={{backgroundImage: "url(" + background + ")"}} />
-          <Batch />
+            <Routes />
           </div>
         )
       }

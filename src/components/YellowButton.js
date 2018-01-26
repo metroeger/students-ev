@@ -32,9 +32,7 @@ render() {
     return (
       <p className={ this.classNames() }>
         <button
-        style={styles.button}
-        onClick={ this.toggleRate.bind(this) }>
-          { rated ? "YELLOW" : 'RATE ME' }
+        style={styles.button}>YELLOW
         </button>
       </p>
     )

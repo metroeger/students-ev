@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
-
 const styles = {
   button: {
     background: "grey"
@@ -10,8 +9,17 @@ const styles = {
 class NextButton extends PureComponent {
   static propTypes = {
     onChange: PropTypes.func.isRequired,
+    calculated: PropTypes.bool
   }
 
+  classNames() {
+    const { rated } = this.props
+    let classes = 'NextButton'
+
+    if (calculated) { classes += ' calculated' }
+
+    return classes
+  }
 
   randomize() {
     this.props.onChange()
@@ -20,11 +28,11 @@ class NextButton extends PureComponent {
   render() {
     const {rated} = this.props
     return (
-      //<p className={ this.greenNames() }>
+      <p className={ this.classNames() }>
         <button
         style={styles.button}
         onClick={ this.randomize.bind(this) }>
-          { rated ? "GREEN" : 'RATE ME' }
+          { calculated ? "Tomorrow again" : 'Li' }
         </button>
       </p>
     )
